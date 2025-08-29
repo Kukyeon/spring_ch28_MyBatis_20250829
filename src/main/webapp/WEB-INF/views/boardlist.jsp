@@ -9,12 +9,14 @@
 </head>
 <body>
 	<h2>게시판 목록</h2>
+	게시글 총 갯수 : <h3 style="color: green;">${bCount}</h3>개
+	
 	<hr>
 	
 	글 번호 / 글    제    목 / 글 쓴 이 / 조회수 / 등 록 일 <br> <br>
 	
 	<c:forEach items="${boardDtos}" var="bDto">
-		${bDto.bnum} / ${bDto.btitle} / ${bDto.bcontent} / ${bDto.bname} / ${bDto.bhit} / ${bDto.bdate} <br>
+		${bDto.bnum} / <a href="content_view?bnum=${bDto.bnum}">${bDto.btitle}</a> / ${bDto.bcontent} / ${bDto.bname} / ${bDto.bhit} / ${bDto.bdate} <br>
 	</c:forEach>
 	
 	<hr>

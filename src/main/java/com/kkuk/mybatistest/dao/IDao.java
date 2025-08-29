@@ -15,6 +15,15 @@ public interface IDao {
 	public void boardWriteDao(String btitle,String bcontent,String bname);
 	
 	//게시판 글 삭제 추상 메서드
-	public int boardDeleteDao(String bnum);
+	public List<BoardDto> boardDeleteDao(String bnum);
+	
+	//모든글 갯수 가져오기 추상메서드 선언
+	public int boardcountDao();
+	
+	//글 내용 보기 추상메서드 선언
+	public BoardDto boardContentViewDao(String bnum);
+	
+	//글 내용 수정 추상 메서드
+	public int boardModifyDao(String btitle,String bcontent,String bnum);
 	
 }

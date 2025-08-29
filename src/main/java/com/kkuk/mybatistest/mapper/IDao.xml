@@ -16,4 +16,16 @@
 	<delete id="boardDeleteDao">
 		DELETE FROM boardtbl WHERE bnum = #{param1}
 	</delete>
+	
+	<select id="boardcountDao" resultType="int">
+		SELECT COUNT(*) FROM boardtbl
+	</select>
+	
+	<select id="boardContentViewDao" resultType="com.kkuk.mybatistest.dto.BoardDto">
+		SELECT * FROM boardtbl WHERE bnum = #{param1}
+	</select>
+	
+	<update id="boardModifyDao">
+		UPDATE boardtbl SET btitle = #{param1}, bcontent = #{param2} WHERE bnum = #{param3} 
+	</update>
 </mapper>
