@@ -57,7 +57,7 @@ public class BoardController {
 		
 		String bnum = request.getParameter("bnum");
 		IDao idao = sqlSession.getMapper(IDao.class);
-		int result = idao.boardDeleteDao(bnum);
+		idao.boardDeleteDao(bnum);
 		
 		return "redict:boardlist";
 	}
