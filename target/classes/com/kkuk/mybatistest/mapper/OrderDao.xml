@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.kkuk.mybatistest.dao.OrderDao">
+	
+	<select id="userOrderListDao" resultType="com.kkuk.mybatistest.dto.UserOrderDto">
+		SELECT u.userid, u.username, o.orderid, o.ordername 
+		FROM springdb.user u
+		INNER JOIN springdb.order o ON u.userid = o.userid 
+		WHERE u.userid = #{param1}
+	</select>
+	
+	
+</mapper>

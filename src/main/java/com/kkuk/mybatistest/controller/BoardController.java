@@ -66,7 +66,7 @@ public class BoardController {
 		IDao idao = sqlSession.getMapper(IDao.class);
 		idao.boardDeleteDao(bnum);
 		
-		return "redict:boardlist";
+		return "redirect:boardlist";
 	}
 	
 	@RequestMapping(value = "/content_view")
