@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.kkuk.mybatistest.dao.IDao">
+	
+	<select id="boardlistDao" resultType="com.kkuk.mybatistest.dto.BoardDto">
+		SELECT * FROM boardtbl ORDER BY bnum DESC
+	</select>
+	
+	<insert id="boardWriteDao">
+		INSERT INTO boardtbl(btitle, bcontent, bname, bhit) VALUES (#{param1},#{param2},#{param3},0) <!-- @param을 썻을경우. 아니면 #{param 1} 이런식 -->
+	</insert>
+	
+	<delete id="boardDeleteDao">
+		DELETE FROM boardtbl WHERE bnum = #{param1}
+	</delete>
+</mapper>
